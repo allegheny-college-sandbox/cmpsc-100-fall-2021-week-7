@@ -1,0 +1,38 @@
+---
+name: cmpsc-100-week-7-data-structures-modules-oop
+break: true
+indent: 4
+revision: feature/override-description
+---
+
+activities/analog/writing/reflection.md:
+    MatchFileFragment --fragment "TODO" --count 0 --exact --description "[ANALOG ACTIVITY] reflection has no TODOs."
+    CountFileParagraphs --count 4 --description "[ANALOG ACTIVITY] Reflection has four (4) paragraphs."
+
+activities/digital/digital-activity-5.ipynb:
+    MatchFileFragment --fragment "TODO" --count 0 --exact --description "[DIGITAL DAY] worksheet contains no TODOs."
+
+activities/digital/digital-activity-5.py:
+    MatchFileFragment --fragment "import json" --count 1 --exact --description "[DIGITAL DAY] program successfully imports the json module."
+    MatchFileFragment --fragment "import random" --count 1 --exact --description "[DIGITAL DAY] program successfully imports the random module."
+    MatchFileRegex --regex "data/moods.json" --count 1 --exact --description "[DIGITAL DAY] program attempts to open the 'moods.json' file"
+    MatchFileRegex --regex "=(\s)?load_file" --count 3 --exact --description "[DIGITAL DAY] program attempts to load the appropriate amount of files using load_file()"
+    MatchFileFragment --fragment "random.randint(1," --count 1 --description "[DIGITAL DAY] program successfully implements the randint method of random."
+    MatchFileFragment --fragment "TODO" --count 0 --exact --description "[DIGITAL DAY] python file contains no TODOs."
+    
+lab/week-7-lab.py:
+    MatchFileFragment --fragment "on()" --count 1 --exact --description "[LAB] Attempt to power ROBBY on"
+    MatchFileFragment --fragment "off()" --count 1 --exact --description "[LAB] Attempt to power ROBBY down"
+    MatchFileFragment --fragment "tell(" --count 1 --exact --description "[LAB] Attempted to tell ROBBY something"
+    MatchFileFragment --fragment "while" --count 1 --description "[LAB] Implemented correct loop to talk to ROBBY"
+    MatchFileFragment --fragment "input(" --count 1 --description "[LAB] Allowed user to talk to ROBBY via input"
+    MatchFileRegex --regex "json\.load\(" --count 1 --description "[LAB] Loads the JSON file using correct method"
+    MatchFileFragment --fragment "def load_file(" --count 1 --exact --description "[LAB] Created load_file function"
+    MatchFileFragment --fragment "return" --count 1 --description "[LAB] load_file function features a return statement"
+    CountSingleLineComments --count 10 --language Python
+    
+    
+ExecuteCommand --command "cd activities/digital && python digital-activity-5.py" --description "[DIGITAL DAY] activity program in digital-day-5.py runs"
+MatchCommandRegex --command "cd activities/digital && python digital-activity-5.py" --description "[DIGITAL DAY] activity program in digital-day-5.py has some version of the expected output" --regex "(I WIN!|I LOSE!)" --count 1 --exact
+CountCommandOutput --command "cd activities/digital && python digital-activity-5.py" --count 2 --description "[DIGITAL DAY] activity program in digital-day-5.py produces at least the minimum amount of lines of output"
+MatchCommandFragment --command "cd lab && python week-7-lab.py < .conversation" --fragment "That makes me sad" --count 2 --exact --description "[LAB] ROBBY responds appropriately to test conversation "
