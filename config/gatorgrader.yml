@@ -2,7 +2,6 @@
 name: cmpsc-100-week-7-data-structures-modules-oop
 break: true
 indent: 4
-revision: feature/override-description
 ---
 
 activities/analog/writing/reflection.md:
