@@ -122,7 +122,7 @@ However, you need to be _in the right place_ to get the right result. Don't forg
 
 The GitHub platform is a place to store your work. So, it makes some sense that should be able to _clone_ (download) from it, and push back (upload) to it. Here, we'll learn this second part.
 
-- [ ] `cd` to your `~` folder
+- [ ] `cd` to the `~` folder
 - [ ] Locate the `cmpsc-100-fall-2021-week-7-modules-oop` folder and `cd` to it.
 
 Once in this folder, we need to tell git that there have been changes.
